@@ -1,5 +1,7 @@
 package Learn_Functions;
 
+import java.util.Scanner;
+
 public class User_Defined_Functions {
 	
 	//User - defined functions - 4 types
@@ -49,6 +51,67 @@ public class User_Defined_Functions {
 		}	
 	}
 	
+	
+	
+//	4.with argument with return type function
+	
+public static int Find_max(int[] b) {
+	
+	int a[] = b;
+	
+	int v = a[0];
+	
+	for(int i = 0; i<a.length;i++){
+		if(a[i]>v) {
+			v = a[i];
+		}
+	}
+	
+	return v;	
+}
+
+// Recursive function -> Factorial
+	public static int fact(int n) {
+		if(n==0 || n==1) {
+			return 1;
+		}
+		else {
+			return n*fact(n-1);
+		}
+	}
+	
+	/*
+	 * n=5
+	 * return 5*fact(4) ->5*
+	 * return 4*fact(3) ->5*4* ->20*
+	 * return 3*fact(2) ->20*3* ->60*
+	 * return 2*fact(1) ->60*2* ->120*
+	 * return 1=> 120*1 = 120
+	 */
+	
+	public static void login() {
+		
+		Scanner scan = new Scanner(System.in);
+		System.out.print("Enter the user name : ");
+		String name = scan.next().toLowerCase();
+		
+		if(name.equals("subash")) {
+			System.out.print("Enter the Password : ");
+			String pass = scan.next();
+			if(pass.equals("subash123")) {
+				System.out.print("Login Success👍👍");
+			}
+			else {
+				System.out.println("Invaild Password..");
+				login();
+			}
+		}
+		else {
+			System.out.println("Invaild Email Id..");
+			login();
+		}
+	}
+	
 
 	public static void main(String[] args) {
 		
@@ -63,8 +126,19 @@ public class User_Defined_Functions {
 //		add(2,8,2);
 		
 //		System.out.println(palindrome());
-		String ss = palindrome();
-		System.out.println(ss);
+//		String ss = palindrome();
+//		System.out.println(ss);
+		
+//		int b1[]= {23,4,58,2,9,35};
+//		int f = Find_max(b1);
+//		System.out.println("Max Value of Array :"+f);
+		
+//		int dd = 5;
+//		int v = fact(dd);
+//		System.out.println(dd+" Factorial Value : "+v);
+		
+		login();
+			
 
 	}
 
