@@ -1,10 +1,14 @@
 package Data_Structures;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.PriorityQueue;
 import java.util.Spliterator;
+import java.util.Stack;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 public class Learn_List {
@@ -123,18 +127,109 @@ public class Learn_List {
 		
 		
 		
-		TreeSet <Object> t = new TreeSet <Object>();	
-		t.add('A');
-		t.add('a');
-		t.add('!');
-		t.add('4');
-		t.add('Z');
-		t.add('~');
-		t.add('a');
-		System.out.println(t);
-		System.out.println(t.lower('A'));
-		System.out.println(t.higher('A'));
+//		TreeSet <Object> t = new TreeSet <Object>();	
+//		t.add('A');
+//		t.add('a');
+//		t.add('!');
+//		t.add('4');
+//		t.add('Z');
+//		t.add('~');
+//		t.add('a');
+//		System.out.println(t);
+//		System.out.println(t.lower('A'));
+//		System.out.println(t.higher('A'));
 		
+		
+		
+		
+//		HashMap
+		
+//		HashMap <Object,Object> m = new HashMap <Object,Object>();
+//		
+//		m.put("Name","Pradeepan");
+//		m.put("Age", 25);
+//		m.put('B', true);
+//		m.put(1, 100);
+//		m.put(null,"Subash");
+//		
+//		System.out.println(m);
+//		
+//		System.out.println(m.get(null));
+//		
+//		System.out.println(m.keySet());
+//		System.out.println(m.values());
+//		System.out.println(m.get("Age"));
+//		
+//		System.out.println(m.replace('B', true, false));
+//		System.out.println(m);
+//		
+//		System.out.println(m.remove(1));
+//		System.out.println(m);
+//		
+//		System.out.println(m.size());
+//		
+		
+		
+//		TreeMap <Object,Object> tm = new TreeMap <Object,Object>();
+//		tm.put('A', "Apple");
+//		tm.put('Z', "Zipper");
+//		tm.put('1', 1000);
+//		tm.put('!', null);
+//		tm.put('b', "bat");
+//		tm.put('^', "Live");
+//		
+//		System.out.println(tm);
+//		System.out.println(tm.pollFirstEntry());
+//		System.out.println(tm);
+//		
+//		System.out.println(tm.lowerEntry('b'));
+//		System.out.println(tm);
+//		
+//		System.out.println(tm.ceilingKey('Z'));
+//		System.out.println(tm.firstKey());
+//		System.out.println(tm.higherKey('A'));
+//		System.out.println(tm.lowerKey('A'));
+//		System.out.println(tm.lastKey());
+		
+		
+		
+//		Queue
+//		PriorityQueue <Object> q = new PriorityQueue <Object>();
+//		q.add("Subash");
+//		q.add("Ragul");
+//		q.add("Pradeepan");
+//		q.add("Devadharshini");
+//		q.add("Java");
+//		q.add("Springboot");
+//		
+//		System.out.println(q);
+//		
+//		System.out.println(q.remove());
+//		System.out.println(q);
+//		System.out.println(q.add("Praveen"));
+//		System.out.println(q);
+		
+		
+		
+		Stack<Object> t = new Stack<Object>();
+		
+		t.add("Subash");
+		t.add("Ragul");
+		t.add("Pradeepan");
+		t.add("Devadharshini");
+		t.add("Java");
+		t.add("Springboot");
+		
+		System.out.println(t);
+		
+		System.out.println(t.pop());
+		System.out.println(t);
+		System.out.println(t.push("React.Js"));
+		System.out.println(t);
+		System.out.println(t.pop());
+		System.out.println(t.pop());
+		System.out.println(t.pop());
+		System.out.println(t);
 		
 	}
 
