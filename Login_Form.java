@@ -78,7 +78,43 @@ public class Login_Form implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		
+		String x3 = t3.getText();
+		String x4 = t4.getText();
+		
+		if(x3.equals("") || x4.equals("")) {
+			new JOptionPane().showMessageDialog(f, "Fill All the Fields");
+		}
+		else {
+			
+			try {
+				String url = "jdbc:mysql://localhost:3306/aa_tech";
+				String user = "root";
+				String password = "root";
+				Connection c = DriverManager.getConnection(url,user,password);
+				PreparedStatement  ps = c.prepareStatement(" select * from users where email=? and password=? ");
+				ps.setString(1, x3);
+				ps.setString(2, x4);
+				ResultSet rs = ps.executeQuery();
+				if(rs.next()) {
+//					c.commit();
+					c.close();
+					new JOptionPane().showMessageDialog(f, "Login Successfully..");
+				}
+				else {
+					new JOptionPane().showMessageDialog(f, "Invaild User..");
+//					c.commit();
+					c.close();
+				}
+				
+				
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		
+		}
+
 		
 	}
 
