@@ -119,9 +119,38 @@ public class Register_form implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
-		Login_Form l = new Login_Form();
-		l.lg();
-		f.setVisible(false);
+		String x1 = t1.getText();
+		String x2 = t2.getText();
+		String x3 = t3.getText();
+		String x4 = t4.getText();
+		
+		if(x1.equals("") || x2.equals("") || x3.equals("") || x4.equals("")) {
+			new JOptionPane().showMessageDialog(f, "Fill All the Fields");
+		}
+		else {
+			
+			try {
+				String url = "jdbc:mysql://localhost:3306/aa_tech";
+				String user = "root";
+				String password = "root";
+				Connection c = DriverManager.getConnection(url,user,password);
+				PreparedStatement  ps = c.prepareStatement("insert into users(name,phone,email,password) values(?,?,?,?)");
+				ps.setString(1, x1);
+				ps.setString(2, x2);
+				ps.setString(3, x3);
+				ps.setString(4, x4);
+				ps.execute();
+				c.close();
+				new JOptionPane().showMessageDialog(f, "Register Successfully..");
+				
+				Demo_Login l = new Demo_Login();
+				l.lg();
+				
+				f.setVisible(false);
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		
 	}
 
